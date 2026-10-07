@@ -1,0 +1,6 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder project dashboard thumbnail">
+  <rect width="400" height="300" fill="#12151a"/>
+  <g stroke="#232a32" stroke-width="1"><path d="M40 240H360M40 60V240"/></g>
+  <path d="M60 220 110 160 160 190 210 120 260 150 310 90" fill="none" stroke="#2fa8ff" stroke-width="1.6"/>
+  <path d="M60 220 110 200 160 210 210 170 260 180 310 140" fill="none" stroke="#ff5a1f" stroke-width="1.6"/>
+</svg>

@@ -1,0 +1,7 @@
+<svg viewBox="0 0 320 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Finite element damage model placeholder, I-40 bridge">
+  <rect width="320" height="420" fill="#12151a"/>
+  <g stroke="#232a32" stroke-width="1"><path d="M20 100H300M20 160H300M20 220H300M20 280H300M20 340H300"/></g>
+  <path d="M20 220Q160 150 300 220" fill="none" stroke="#2fa8ff" stroke-width="1.6"/>
+  <path d="M20 240Q160 300 300 240" fill="none" stroke="#ff5a1f" stroke-width="1.6"/>
+  <g fill="#ff5a1f"><circle cx="140" cy="255" r="4"/><circle cx="170" cy="262" r="4"/></g>
+</svg>

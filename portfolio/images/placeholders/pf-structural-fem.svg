@@ -1,0 +1,6 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder FEM damage model thumbnail">
+  <rect width="400" height="300" fill="#12151a"/>
+  <g stroke="#232a32" stroke-width="1"><path d="M20 80H380M20 130H380M20 180H380M20 230H380"/></g>
+  <path d="M20 160Q200 110 380 160" fill="none" stroke="#2fa8ff" stroke-width="1.6"/>
+  <path d="M20 175Q200 220 380 175" fill="none" stroke="#ff5a1f" stroke-width="1.6"/>
+</svg>

@@ -1,0 +1,9 @@
+<svg viewBox="0 0 320 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Structural frame render placeholder, flyover project">
+  <rect width="320" height="420" fill="#12151a"/>
+  <g stroke="#ff5a1f" stroke-width="1.4">
+    <path d="M20 360 300 360M40 360 40 120M120 360 120 160M200 360 200 160M280 360 280 120"/>
+    <path d="M40 120 160 60 280 120"/>
+    <path d="M40 200 120 160 200 160 280 200"/>
+  </g>
+  <g stroke="#2fa8ff" stroke-width="1" opacity="0.5"><path d="M40 280 280 280M40 240 280 240"/></g>
+</svg>

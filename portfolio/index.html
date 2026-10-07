@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Amir Ullah Khan | Civil Engineer & BIM Engineer</title>
+<meta name="description" content="Amir Ullah Khan, Civil & BIM Engineer, transforming complex structures into precise digital twin models. Structural analysis, BIM modeling, site coordination, clash detection." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/styles.css" />
+<link rel="stylesheet" href="css/neon.css" />
+<script>
+  (function(){ try { document.documentElement.setAttribute('data-theme', localStorage.getItem('auk:theme:v2') || 'neon-green'); } catch(e){} })();
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="ambient" aria-hidden="true">
+  <div class="ambient__blob ambient__blob--orange"></div>
+  <div class="ambient__blob ambient__blob--blue"></div>
+</div>
+
+<header class="nav">
+  <div class="container nav__inner">
+    <a href="index.html" class="nav__mark" data-brand>Amir Ullah <span>Khan</span></a>
+    <nav class="nav__links" id="navLinks">
+      <a href="index.html" data-nav="index.html">Home</a>
+      <a href="about.html" data-nav="about.html">About</a>
+      <a href="services.html" data-nav="services.html">Services</a>
+      <a href="projects.html" data-nav="projects.html">Projects</a>
+      <a href="credentials.html" data-nav="credentials.html">Credentials</a>
+      <a href="contact.html" data-nav="contact.html">Contact</a>
+      <a href="contact.html" class="btn btn--primary" data-bind="hero.secondaryCta">Get in Touch</a>
+    </nav>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><path d="M0 1H18M0 7H18M0 13H18" stroke="currentColor" stroke-width="1.6"/></svg>
+    </button>
+    <a href="contact.html" class="btn btn--primary nav__cta" data-bind="hero.secondaryCta">Get in Touch</a>
+  </div>
+</header>
+
+<main id="main">
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="container hero__grid">
+      <div>
+        <div class="hero__eyebrow">
+          <span class="dot"></span>
+          <span class="eyebrow" data-bind="hero.eyebrow">Civil Engineer &amp; BIM Engineer</span>
+        </div>
+        <h1 class="hero__title" id="heroTitle">Amir Ullah Khan<br />builds <em>digital twins</em> of the structures you rely on.</h1>
+        <p class="lede hero__tagline" data-bind="hero.tagline">Transforming complex structures into precise digital twin models across BIM coordination, structural analysis, and on-site quality control.</p>
+        <div class="hero__actions">
+          <a href="projects.html" class="btn btn--primary" id="heroPrimaryCta">
+            View My Projects
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="contact.html" class="btn btn--ghost" data-bind="hero.secondaryCta">Get in Touch</a>
+        </div>
+      </div>
+
+      <div class="hero__portrait" id="heroPortrait">
+        <div class="hero__portrait-media">
+          <img id="heroPortraitImg" src="images/placeholders/hero-portrait.svg" alt="Amir Ullah Khan profile portrait" />
+        </div>
+        <div class="hero__portrait-frame"></div>
+        <div class="hero__portrait-tag"><span class="pulse"></span><span data-bind="hero.portraitTag">Available for new projects</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ INTERACTIVE BUILD SCRUB ============ -->
+  <section style="padding-top:0;">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 data-text="pages.home.scrubHeading">Watch a model come together.</h2>
+        <p class="lede" data-text="pages.home.scrubLede">Move your cursor across the frame to scrub through a 2D drawing becoming a fully coordinated 3D BIM model.</p>
+      </div>
+      <div class="scrub-panel reveal" id="scrubPanel">
+        <video id="scrubVideo" src="media/build-sequence.mp4" muted loop playsinline preload="auto" autoplay></video>
+        <div class="scrub-panel__dot" id="scrubDot">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h4M10 8h4M5 5l-3 3 3 3M11 5l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="scrub-panel__hint" id="scrubHint">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h4M10 8h4M5 5l-3 3 3 3M11 5l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Move your cursor to scrub the build
+        </div>
+        <div class="scrub-panel__progress"><div class="scrub-panel__progress-fill" id="scrubProgress"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DIGITAL TWIN LAYERS ============ -->
+  <section>
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 id="dtHeading">One building, modeled in every layer.</h2>
+        <p class="lede" id="dtLede">From bare frame to finished facade, this is what a coordinated BIM workflow actually looks like.</p>
+      </div>
+
+      <div class="twin-row reveal-stagger" id="twinRow"></div>
+
+      <div class="twin-feature reveal">
+        <div class="twin-feature__frame">
+          <img id="twinFeatureImg" src="images/digital-twin/exploded-assembly.jpg" alt="Exploded assembly diagram" loading="lazy" />
+        </div>
+        <div class="twin-feature__meta">
+          <span id="twinFeatureTag">Full Assembly &middot; Digital Twin</span>
+          <h3 id="twinFeatureTitle">Every layer traced back to a single coordinated model.</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATS ============ -->
+  <section class="hairline-top">
+    <div class="container reveal">
+      <div class="stats" id="statsGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES TEASER ============ -->
+  <section>
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 id="svcTeaserHeading">Where I add the most value on&nbsp;site.</h2>
+        <p class="lede" id="svcTeaserLede">Four disciplines, one coordinated workflow, from first model to final clash report.</p>
+      </div>
+      <div class="services-grid reveal" id="svcCards">
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 1.5 18 6v8l-8 4.5L2 14V6l8-4.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M2 6l8 4.5 8-4.5M10 10.5V19" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3>3D BIM Modeling</h3>
+          <p>Federated architectural and structural models in Revit, built to LOD spec and ISO 19650 information standards.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 17V9M9 17V3M15 17v-6M3 21h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Structural Analysis</h3>
+          <p>Modeling and verification in ETABS, SAFE, and SAP2000, from gravity systems to full seismic checks.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.5"/><path d="M10 6v4l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Site Coordination &amp; QC</h3>
+          <p>Field QA/QC, material testing, and contractor coordination to keep execution aligned with design intent.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2.5" y="2.5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="8.5" y="8.5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3>Clash Detection</h3>
+          <p>Navisworks-driven coordination that catches conflicts between disciplines before they reach the field.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURED WORK ============ -->
+  <section class="hairline-top">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 data-text="pages.home.workHeading">A few structures I&rsquo;ve helped model and build.</h2>
+        <p class="lede" data-text="pages.home.workLede">Selected work spanning BIM coordination, structural QA/QC, and research-grade FEM modeling.</p>
+      </div>
+      <div class="work-grid reveal" id="workGrid"></div>
+      <div class="work-footer reveal">
+        <a href="projects.html" class="btn btn--ghost" data-text="pages.home.workButton">View Full Portfolio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="hairline-top">
+    <div class="container">
+      <div class="section-head reveal" style="margin-bottom:44px;">
+        <h2 data-text="pages.home.testiHeading">What teams say after working with me.</h2>
+      </div>
+      <div class="testi reveal">
+        <div class="testi__track" id="testiTrack"></div>
+        <div class="testi__nav" id="testiNav"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TOOLS MARQUEE ============ -->
+  <section style="padding:0;">
+    <div class="marquee">
+      <div class="marquee__track" id="marqueeTrack"></div>
+    </div>
+  </section>
+
+  <!-- ============ CLOSING CTA ============ -->
+  <section class="cta-close hairline-top">
+    <div class="container reveal">
+      <span class="eyebrow" style="display:block; margin-bottom:18px;" data-bind="closingCta.eyebrow">Let&rsquo;s build something precise</span>
+      <h2 data-bind="closingCta.heading">Ready to collaborate on your next structure?</h2>
+      <a href="contact.html" class="btn btn--primary" data-bind="closingCta.buttonLabel">Get in Touch</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div>
+        <a href="index.html" class="footer__mark" data-brand>Amir Ullah <span>Khan</span></a>
+        <p class="footer__tag" data-text="site.footerTag">Civil Engineer &amp; BIM Engineer, based in Pakistan, available for on-site and remote engagements.</p>
+      </div>
+      <div class="footer__links">
+        <div class="footer__col">
+          <h4>NAVIGATE</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="projects.html">Projects</a>
+          <a href="credentials.html">Credentials</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer__col">
+          <h4>CONTACT</h4>
+          <span data-bind="contact.address">Hanif Town, Dera Ismail Khan, Pakistan</span>
+          <a href="#" data-bind="contact.email" data-bind-href="contact.email-mailto">iamirullah777@gmail.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy" data-text="site.copyright">&copy; 2026 Amir Ullah Khan. All rights reserved.</p>
+      <div class="footer__social">
+        <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener" data-bind-href="contact.linkedin">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.8c0-1.38-.02-3.15-1.92-3.15-1.93 0-2.23 1.5-2.23 3.05V21h-4V9Z"/></svg>
+        </a>
+        <a href="#" aria-label="Google Scholar" target="_blank" rel="noopener" data-bind-href="contact.scholar">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 3 2 8l10 5 8-4.4V15M6 10.5V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#" aria-label="Email" data-bind-href="contact.email-mailto">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 6h18v12H3V6Zm0 0 9 7 9-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/site-data.js"></script>
+<script src="js/fx.js" defer></script>
+<script src="js/render.js"></script>
+<script src="js/main.js"></script>
+<script src="js/interactive-home.js"></script>
+<script>AUKRender.init("home");</script>
+</body>
+</html>

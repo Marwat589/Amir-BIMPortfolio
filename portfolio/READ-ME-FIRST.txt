@@ -1,0 +1,69 @@
+AMIR ULLAH KHAN - PORTFOLIO WEBSITE (v2, admin saves reach every visitor)
+=========================================================================
+
+WHAT CHANGED IN THIS VERSION
+-----------------------------
+1. Admin edits now go to a SERVER (Netlify Function + Netlify Blobs), not just your browser.
+   Save in admin.html -> every visitor on every device sees it. Uploaded photos and PDFs are
+   stored as real files, so the old 5-10 MB browser limit is gone.
+2. Contact / LinkedIn / Google Scholar links work. Type them with or without https://
+   (linkedin.com/in/you is fine). An empty link is hidden instead of leading nowhere.
+3. Projects page: edits, new projects, categories (filter tabs) and extra photos all update live.
+4. Nearly all page text is editable: Admin -> "Site & Page Text", plus service cards, CV upload,
+   contact-form project types, and portfolio categories.
+5. New dark neon look (colours follow the theme picker: Neon Green default, Neon Cyan, and the
+   four old themes). Cursor spotlight on cards, glow, scroll progress bar, page-load motion.
+   Motion is switched off for visitors who ask their device for reduced motion.
+
+HOW TO DEPLOY (important: the backend needs a real Netlify deploy)
+-------------------------------------------------------------------
+The site needs the "netlify" folder and package.json deployed together with the HTML files.
+Plain drag-and-drop of only HTML files will NOT include the backend.
+
+Recommended (works every time):
+  A) Put this folder in a GitHub repo, then on Netlify: Add new site -> Import from Git.
+     Publish directory ".", no build command. Every push redeploys.
+  B) Or with the Netlify CLI:  npm i -g netlify-cli   then, inside this folder:
+     netlify deploy --prod
+  (Netlify drag-and-drop of the whole folder may also bundle the function; if /api/health on your
+   site does not show {"ok":true}, use A or B.)
+
+Check it worked: open  https://YOUR-SITE.netlify.app/api/health  -> you should see {"ok":true}.
+Then open /admin.html. The left menu shows "Live: saves reach every visitor".
+If it shows "Preview: saves stay in this browser", the backend is not deployed yet.
+
+LOGIN
+-----
+Default:  BIM Engineer  /  TUM@123
+Change it right away: Admin -> Security. The new login is stored (hashed) on the server.
+Optional: in Netlify -> Site settings -> Environment variables you can set
+  ADMIN_USER and ADMIN_PASS (used until you change the login inside the panel) and
+  AUTH_SECRET (any long random text; signs login sessions).
+
+IF YOU ALREADY MADE EDITS IN THE OLD VERSION
+---------------------------------------------
+Those edits live only in the browser you used. Open admin.html in THAT same browser after deploying:
+Overview shows "Edits found in this browser" with a button to publish them to the live site.
+
+LIMITS TO KNOW
+--------------
+- Once deployed (Live mode): no practical limit on the number of photos. Each is stored as its own
+  file (auto-shrunk before upload, PDFs up to ~8 MB each), and the text/content file itself
+  (project names, descriptions, links) can hold hundreds of entries within its ~8 MB ceiling -
+  images don't count against that, since only their URLs are stored there.
+- Before deploying (Preview mode, shown in the admin sidebar): edits are kept in this browser only,
+  in IndexedDB, which comfortably holds hundreds of photos too - but only on this one device, and
+  only until you deploy and publish them (Overview tab offers a one-click "Publish" button for this).
+- Uploading many photos at once (a big batch of 50, 100+): they're processed a few at a time with a
+  progress message ("Adding photo 12 of 60..."), so the tab stays responsive either way.
+- Visitors get new content on their next page load or when they return to the tab.
+- The admin login protects saving, not viewing: the public site content is public by design.
+
+FILES
+-----
+index/about/services/projects/credentials/contact.html  public pages
+admin.html                                              admin panel
+css/styles.css + css/neon.css                           design (neon.css is the new theme layer)
+js/site-data.js  content + server connection    js/render.js  paints pages
+js/admin.js      admin panel logic              js/fx.js      cursor effects
+netlify/functions/api.mjs                       the backend  |  netlify.toml, package.json  config

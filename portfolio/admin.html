@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin Panel | Amir Ullah Khan</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/styles.css" />
+<link rel="stylesheet" href="css/neon.css" />
+<link rel="stylesheet" href="css/admin.css" />
+<script>
+  (function(){ try { document.documentElement.setAttribute('data-theme', localStorage.getItem('auk:theme:v2') || 'neon-green'); } catch(e){} })();
+</script>
+</head>
+<body class="admin-body">
+
+<!-- ============ LOGIN SCREEN ============ -->
+<div class="login-screen" id="loginScreen">
+  <div class="login-card">
+    <div class="login-card__mark">Amir Ullah <span>Khan</span></div>
+    <h1>Admin Panel</h1>
+    <p class="lede">Log in to edit your live website. Whatever you save here appears on the site for every visitor.</p>
+    <form id="loginForm" novalidate>
+      <div class="field">
+        <label for="loginUser">Username</label>
+        <input type="text" id="loginUser" name="username" autocomplete="username" />
+      </div>
+      <div class="field">
+        <label for="loginPass">Password</label>
+        <input type="password" id="loginPass" name="password" autocomplete="current-password" />
+      </div>
+      <button type="submit" class="btn btn--primary">Log In</button>
+      <p class="login-error" id="loginError">Incorrect username or password. Try again.</p>
+    </form>
+    <p class="login-hint">Change the default password after your first login, in the Security section.</p>
+  </div>
+</div>
+
+<!-- ============ DASHBOARD ============ -->
+<div class="admin-shell" id="adminShell" style="display:none;">
+  <aside class="admin-sidebar">
+    <div class="admin-sidebar__mark">Amir Ullah <span>Khan</span></div>
+    <div class="admin-sidebar__sub">ADMIN PANEL</div>
+    <nav class="admin-nav" id="adminNav">
+      <button class="admin-nav__item is-active" data-panel="overview">
+        <svg width="17" height="17" viewBox="0 0 20 20" fill="none"><rect x="2.5" y="2.5" width="6.5" height="6.5" rx="1.3" stroke="currentColor" stroke-width="1.5"/><rect x="11" y="2.5" width="6.5" height="6.5" rx="1.3" stroke="currentColor" stroke-width="1.5"/><rect x="2.5" y="11" width="6.5" height="6.5" rx="1.3" stroke="currentColor" stroke-width="1.5"/><rect x="11" y="11" width="6.5" height="6.5" rx="1.3" stroke="currentColor" stroke-width="1.5"/></svg>
+        Overview
+      </button>
+      <button class="admin-nav__item" data-panel="home">
+        <svg width="17" height="17" viewBox="0 0 20 20" fill="none"><path d="M2.5 9 10 3l7.5 6M4.5 8v8h11V8" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        Home Page
+      </button>
+      <button class="admin-nav__item" data-panel="about">
+        <svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="6.5" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M4 17c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        About Page
+      </button>
+      <button class="admin-nav__item" data-panel="experience">
+        <svg width="17" height="17" viewBox="0 0 20 20" fill="none"><rect x="2.5" y="5.5" width="15" height="10.5" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M2.5 9h15" stroke="currentColor" stroke-width="1.5"/></svg>
+        Experience Galleries
+      </button>
+      <button class="admin-nav__item" data-panel="services">
+        <svg width="17" height="17" viewBox="0 0 20 20" fill="none"><path d="M3 17V9M9 17V3M15 17v-6M3 21h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        Services
+      </button>
+      <button class="admin-nav__item" data-panel="portfolio">
+        <svg width="17" height="17" viewBox="0 0 20 20" fill="none"><rect x="2.5" y="4" width="15" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M2.5 8.5h15" stroke="currentColor" stroke-width="1.5"/></svg>
+        Portfolio Projects
+      </button>
+      <button class="admin-nav__item" data-panel="publications">
+        <svg width="17" height="17" viewBox="0 0 20 20" fill="none"><path d="M4 3h8l4 4v10H4V3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M7 9h6M7 12h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        Publications
+      </button>
+      <button class="admin-nav__item" data-panel="certifications">
+        <svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="4.5" stroke="currentColor" stroke-width="1.5"/><path d="M7 11l-1.5 6L10 15l4.5 2L13 11" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        Certifications
+      </button>
+      <button class="admin-nav__item" data-panel="awards">
+        <svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="4.5" stroke="currentColor" stroke-width="1.5"/><path d="M7 11l-1.5 6L10 15l4.5 2L13 11" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        Awards &amp; Achievements
+      </button>
+      <button class="admin-nav__item" data-panel="contact">
+        <svg width="17" height="17" viewBox="0 0 20 20" fill="none"><path d="M3 5h14v10H3V5Zm0 0 7 5.5L17 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Contact Info
+      </button>
+      <button class="admin-nav__item" data-panel="site">
+        <svg width="17" height="17" viewBox="0 0 20 20" fill="none"><path d="M3 5h14M3 10h9M3 15h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        Site &amp; Page Text
+      </button>
+      <button class="admin-nav__item" data-panel="theme">
+        <svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.5"/><path d="M10 2.5v15M2.5 10h15" stroke="currentColor" stroke-width="1.2"/></svg>
+        Theme
+      </button>
+      <button class="admin-nav__item" data-panel="security">
+        <svg width="17" height="17" viewBox="0 0 20 20" fill="none"><rect x="4" y="9" width="12" height="8" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M6.5 9V6a3.5 3.5 0 0 1 7 0v3" stroke="currentColor" stroke-width="1.5"/></svg>
+        Security
+      </button>
+    </nav>
+    <div class="admin-sidebar__footer">
+      <a class="admin-sidebar__view-live" href="index.html" target="_blank" rel="noopener">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M6 3H3v10h10v-3M9 3h4v4M13 3 7 9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        View Live Site
+      </a>
+      <button class="admin-logout" id="logoutBtn">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M6 14H3a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h3M11 11l3-3-3-3M14 8H6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Log Out
+      </button>
+    </div>
+  </aside>
+
+  <main class="admin-main">
+
+    <!-- ---------- OVERVIEW ---------- -->
+    <section class="admin-panel is-active" id="panel-overview">
+      <div class="admin-topbar"><div><h1>Overview</h1><p>Everything you save here updates the live website for every visitor.</p></div></div>
+      <div class="admin-section-card">
+        <h2>How this works</h2>
+        <p class="hint" style="margin-top:10px; line-height:1.6;">
+          Use the sections on the left to edit each part of the site: page text, services, portfolio projects, awards,
+          contact details, images, and the color theme. Every section has its own <b>Save Changes</b> button. When the
+          status at the bottom of the left menu says <b>Live</b>, a save is stored on the server and every visitor sees it
+          right away, on any device.
+        </p>
+        <p class="hint" style="margin-top:14px; line-height:1.6;">
+          Photos and PDFs you upload are stored as separate files, so there is no small browser storage limit to run into.
+          Images are shrunk automatically before upload, so hundreds of them take very little space. PDFs can be up to about 8 MB each. There is no practical limit on how many photos you can add.
+        </p>
+      </div>
+      <div id="overviewExtras"></div>
+      <div class="admin-section-card admin-danger-zone">
+        <h2>Reset everything</h2>
+        <p class="hint" style="margin-top:10px;">Replaces everything on the live site with the original default content and theme. Uploaded files stay stored but are no longer used.</p>
+        <div class="admin-save-row" style="margin-top:16px;">
+          <button class="btn btn--ghost" id="resetAllBtn">Reset to Defaults</button>
+          <span class="admin-toast" id="resetToast">Reset done</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- HOME PAGE ---------- -->
+    <section class="admin-panel" id="panel-home">
+      <div class="admin-topbar"><div><h1>Home Page</h1><p>Hero text, portrait photo, stats, and section headings.</p></div></div>
+
+      <div class="admin-section-card">
+        <h2>Hero</h2>
+        <p class="hint">The first thing visitors see.</p>
+        <div class="admin-thumb-row" style="margin-top:18px;">
+          <img class="admin-thumb admin-thumb--round" id="prevHeroPortrait" alt="Portrait preview" />
+          <label class="admin-file-btn">
+            Upload Photo
+            <input type="file" accept="image/*" id="fileHeroPortrait" />
+          </label>
+          <span class="hint">Square-ish photos work best.</span>
+        </div>
+        <div class="admin-grid-2">
+          <div class="field"><label>Eyebrow label</label><input type="text" id="hEyebrow" /></div>
+          <div class="field"><label>Portrait status tag</label><input type="text" id="hPortraitTag" /></div>
+        </div>
+        <div class="admin-grid-2">
+          <div class="field"><label>Name (title line 1)</label><input type="text" id="hTitleLead" /></div>
+          <div class="field"><label>Emphasized phrase</label><input type="text" id="hTitleEm" /></div>
+        </div>
+        <div class="admin-grid-2">
+          <div class="field"><label>Title text before emphasis</label><input type="text" id="hTitleRest" /></div>
+          <div class="field"><label>Title text after emphasis</label><input type="text" id="hTitleTail" /></div>
+        </div>
+        <div class="field"><label>Tagline</label><textarea id="hTagline"></textarea></div>
+        <div class="admin-grid-2">
+          <div class="field"><label>Primary button label</label><input type="text" id="hPrimaryCta" /></div>
+          <div class="field"><label>Secondary button label (used site-wide)</label><input type="text" id="hSecondaryCta" /></div>
+        </div>
+        <div class="admin-save-row">
+          <button class="btn btn--primary" data-save="home-hero">Save Changes</button>
+          <span class="admin-toast" data-toast="home-hero">Saved &middot; live on your site</span>
+        </div>
+      </div>
+
+      <div class="admin-section-card">
+        <h2>Stats</h2>
+        <p class="hint">The four animated counters.</p>
+        <div id="statsEditor"></div>
+        <div class="admin-save-row">
+          <button class="btn btn--primary" data-save="home-stats">Save Changes</button>
+          <span class="admin-toast" data-toast="home-stats">Saved &middot; live on your site</span>
+        </div>
+      </div>
+
+      <div class="admin-section-card">
+        <h2>Featured Work (Home page grid)</h2>
+        <p class="hint">The 4 project cards shown on the Home page.</p>
+        <div id="featuredWorkEditor"></div>
+        <div class="admin-save-row">
+          <button class="btn btn--primary" data-save="home-featured">Save Changes</button>
+          <span class="admin-toast" data-toast="home-featured">Saved &middot; live on your site</span>
+        </div>
+      </div>
+
+      <div class="admin-section-card">
+        <h2>Digital Twin Layers</h2>
+        <p class="hint">The structure / MEP / facade showcase and its exploded-assembly feature image.</p>
+        <div id="digitalTwinEditor"></div>
+        <div class="admin-save-row">
+          <button class="btn btn--primary" data-save="home-twin">Save Changes</button>
+          <span class="admin-toast" data-toast="home-twin">Saved &middot; live on your site</span>
+        </div>
+      </div>
+
+      <div class="admin-section-card">
+        <h2>Testimonials</h2>
+        <div id="testimonialsEditor"></div>
+        <div class="admin-save-row">
+          <button class="btn btn--primary" data-save="home-testi">Save Changes</button>
+          <span class="admin-toast" data-toast="home-testi">Saved &middot; live on your site</span>
+        </div>
+      </div>
+
+      <div class="admin-section-card">
+        <h2>Tools &amp; Software Marquee</h2>
+        <p class="hint">One name per line.</p>
+        <div class="field"><textarea id="marqueeList" style="min-height:130px;"></textarea></div>
+        <div class="admin-save-row">
+          <button class="btn btn--primary" data-save="home-marquee">Save Changes</button>
+          <span class="admin-toast" data-toast="home-marquee">Saved &middot; live on your site</span>
+        </div>
+      </div>
+
+      <div class="admin-section-card">
+        <h2>Closing Call-to-Action</h2>
+        <p class="hint">Shown at the bottom of Home, About, and Services.</p>
+        <div class="field"><label>Eyebrow</label><input type="text" id="ctaEyebrow" /></div>
+        <div class="admin-grid-2">
+          <div class="field"><label>Heading</label><input type="text" id="ctaHeading" /></div>
+          <div class="field"><label>Button label</label><input type="text" id="ctaButton" /></div>
+        </div>
+        <div class="admin-save-row">
+          <button class="btn btn--primary" data-save="home-cta">Save Changes</button>
+          <span class="admin-toast" data-toast="home-cta">Saved &middot; live on your site</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- ABOUT PAGE ---------- -->
+    <section class="admin-panel" id="panel-about">
+      <div class="admin-topbar"><div><h1>About Page</h1><p>Your story, milestones, and skill levels.</p></div></div>
+
+      <div class="admin-section-card">
+        <h2>Story</h2>
+        <div class="field"><label>Page heading</label><input type="text" id="aHeading" /></div>
+        <div class="field"><label>Paragraph 1</label><textarea id="aStory1"></textarea></div>
+        <div class="field"><label>Paragraph 2</label><textarea id="aStory2"></textarea></div>
+        <div class="field"><label>Paragraph 3</label><textarea id="aStory3"></textarea></div>
+        <div class="admin-save-row">
+          <button class="btn btn--primary" data-save="about-story">Save Changes</button>
+          <span class="admin-toast" data-toast="about-story">Saved &middot; live on your site</span>
+        </div>
+      </div>
+
+      <div class="admin-section-card">
+        <h2>"At a Glance" facts</h2>
+        <div id="factsEditor"></div>
+        <div class="admin-save-row">
+          <button class="btn btn--primary" data-save="about-facts">Save Changes</button>
+          <span class="admin-toast" data-toast="about-facts">Saved &middot; live on your site</span>
+        </div>
+      </div>
+
+      <div class="admin-section-card">
+        <h2>Milestones Timeline</h2>
+        <div id="milestonesEditor"></div>
+        <button class="admin-add-btn" id="addMilestoneBtn">+ Add Milestone</button>
+        <div class="admin-save-row">
+          <button class="btn btn--primary" data-save="about-milestones">Save Changes</button>
+          <span class="admin-toast" data-toast="about-milestones">Saved &middot; live on your site</span>
+        </div>
+      </div>
+
+      <div class="admin-section-card">
+        <h2>Core Skills</h2>
+        <div id="skillsEditor"></div>
+        <button class="admin-add-btn" id="addSkillBtn">+ Add Skill</button>
+        <div class="admin-save-row">
+          <button class="btn btn--primary" data-save="about-skills">Save Changes</button>
+          <span class="admin-toast" data-toast="about-skills">Saved &middot; live on your site</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- EXPERIENCE GALLERIES ---------- -->
+    <section class="admin-panel" id="panel-experience">
+      <div class="admin-topbar"><div><h1>Experience Galleries</h1><p>Upload photos for each role, shown on the About page.</p></div></div>
+      <div id="experienceEditor"></div>
+    </section>
+
+    <!-- ---------- SERVICES ---------- -->
+    <section class="admin-panel" id="panel-services">
+      <div class="admin-topbar"><div><h1>Services</h1><p>Add, remove, and price the services shown on your Services page.</p></div></div>
+      <div class="admin-section-card">
+        <div id="servicesEditor"></div>
+        <button class="admin-add-btn" id="addServiceBtn">+ Add Service</button>
+        <div class="admin-save-row">
+          <button class="btn btn--primary" data-save="services">Save Changes</button>
+          <span class="admin-toast" data-toast="services">Saved &middot; live on your site</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- PORTFOLIO ---------- -->
+    <section class="admin-panel" id="panel-portfolio">
+      <div class="admin-topbar"><div><h1>Portfolio Projects</h1><p>Add, remove, and edit the project cards on your Portfolio page and their thumbnails.</p></div></div>
+      <div class="admin-section-card">
+        <div id="portfolioEditor"></div>
+        <button class="admin-add-btn" id="addProjectBtn">+ Add Project</button>
+        <div class="admin-save-row">
+          <button class="btn btn--primary" data-save="portfolio">Save Changes</button>
+          <span class="admin-toast" data-toast="portfolio">Saved &middot; live on your site</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- PUBLICATIONS ---------- -->
+    <section class="admin-panel" id="panel-publications">
+      <div class="admin-topbar"><div><h1>Publications</h1><p>Your Google Scholar link and individual research papers, shown on the Credentials page.</p></div></div>
+      <div class="admin-section-card">
+        <h2>Section Text &amp; Scholar Link</h2>
+        <div class="field"><label>Section heading</label><input type="text" id="pubHeadingInput" /></div>
+        <div class="field"><label>Section subtext</label><textarea id="pubLedeInput"></textarea></div>
+        <div class="field"><label>Google Scholar profile URL</label><input type="text" id="pubScholarInput" /></div>
+        <div class="admin-save-row">
+          <button class="btn btn--primary" data-save="pub-meta">Save Changes</button>
+          <span class="admin-toast" data-toast="pub-meta">Saved &middot; live on your site</span>
+        </div>
+      </div>
+      <div class="admin-section-card">
+        <h2>Papers</h2>
+        <p class="hint">Upload the PDF of each paper, or just link out to where it's published.</p>
+        <div id="papersEditor" style="margin-top:16px;"></div>
+        <button class="admin-add-btn" id="addPaperBtn">+ Add Paper</button>
+        <div class="admin-save-row">
+          <button class="btn btn--primary" data-save="pub-papers">Save Changes</button>
+          <span class="admin-toast" data-toast="pub-papers">Saved &middot; live on your site</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- CERTIFICATIONS ---------- -->
+    <section class="admin-panel" id="panel-certifications">
+      <div class="admin-topbar"><div><h1>Certifications</h1><p>Upload images or PDFs of your certificates, organized into 3 groups on the Credentials page.</p></div></div>
+      <div class="admin-section-card">
+        <div class="field"><label>Section heading</label><input type="text" id="certHeadingInput" /></div>
+        <div class="field"><label>Section subtext</label><textarea id="certLedeInput"></textarea></div>
+        <div class="admin-save-row">
+          <button class="btn btn--primary" data-save="cert-meta">Save Changes</button>
+          <span class="admin-toast" data-toast="cert-meta">Saved &middot; live on your site</span>
+        </div>
+      </div>
+      <div class="admin-section-card">
+        <h2>Job Experience Certificates</h2>
+        <div id="certJobEditor" style="margin-top:14px;"></div>
+        <button class="admin-add-btn" id="addCertJobBtn">+ Add Certificate</button>
+        <div class="admin-save-row">
+          <button class="btn btn--primary" data-save="cert-job">Save Changes</button>
+          <span class="admin-toast" data-toast="cert-job">Saved &middot; live on your site</span>
+        </div>
+      </div>
+      <div class="admin-section-card">
+        <h2>Academic Certificates</h2>
+        <div id="certAcademicEditor" style="margin-top:14px;"></div>
+        <button class="admin-add-btn" id="addCertAcademicBtn">+ Add Certificate</button>
+        <div class="admin-save-row">
+          <button class="btn btn--primary" data-save="cert-academic">Save Changes</button>
+          <span class="admin-toast" data-toast="cert-academic">Saved &middot; live on your site</span>
+        </div>
+      </div>
+      <div class="admin-section-card">
+        <h2>Scholarships</h2>
+        <div id="certScholarshipsEditor" style="margin-top:14px;"></div>
+        <button class="admin-add-btn" id="addCertScholarshipBtn">+ Add Scholarship</button>
+        <div class="admin-save-row">
+          <button class="btn btn--primary" data-save="cert-scholarships">Save Changes</button>
+          <span class="admin-toast" data-toast="cert-scholarships">Saved &middot; live on your site</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- AWARDS ---------- -->
+    <section class="admin-panel" id="panel-awards">
+      <div class="admin-topbar"><div><h1>Awards &amp; Achievements</h1><p>Shown on the About page.</p></div></div>
+      <div class="admin-section-card">
+        <div id="awardsEditor"></div>
+        <button class="admin-add-btn" id="addAwardBtn">+ Add Award</button>
+        <div class="admin-save-row">
+          <button class="btn btn--primary" data-save="awards">Save Changes</button>
+          <span class="admin-toast" data-toast="awards">Saved &middot; live on your site</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- CONTACT ---------- -->
+    <section class="admin-panel" id="panel-contact">
+      <div class="admin-topbar"><div><h1>Contact Info</h1><p>Used on the Contact page and in the footer site-wide.</p></div></div>
+      <div class="admin-section-card">
+        <div class="field"><label>Contact page heading</label><input type="text" id="cHeading" /></div>
+        <div class="field"><label>Contact page intro</label><textarea id="cLede"></textarea></div>
+        <div class="admin-grid-2">
+          <div class="field"><label>Email</label><input type="email" id="cEmail" /></div>
+          <div class="field"><label>WhatsApp number (as shown)</label><input type="text" id="cWhatsapp" /></div>
+        </div>
+        <div class="admin-grid-2">
+          <div class="field"><label>WhatsApp link (wa.me/...)</label><input type="text" id="cWhatsappLink" /></div>
+          <div class="field"><label>Address</label><input type="text" id="cAddress" /></div>
+        </div>
+        <div class="admin-grid-2">
+          <div class="field"><label>LinkedIn URL</label><input type="text" id="cLinkedin" /></div>
+          <div class="field"><label>Google Scholar URL</label><input type="text" id="cScholar" /></div>
+        </div>
+        <div class="admin-save-row">
+          <button class="btn btn--primary" data-save="contact">Save Changes</button>
+          <span class="admin-toast" data-toast="contact">Saved &middot; live on your site</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- SITE & PAGE TEXT ---------- -->
+    <section class="admin-panel" id="panel-site">
+      <div class="admin-topbar"><div><h1>Site &amp; Page Text</h1><p>Your name in the header and footer, and the headings and intro text on every page.</p></div></div>
+    </section>
+
+    <!-- ---------- THEME ---------- -->
+    <section class="admin-panel" id="panel-theme">
+      <div class="admin-topbar"><div><h1>Color Theme</h1><p>Changes every page on the live site instantly, including this Admin Panel.</p></div></div>
+      <div class="admin-section-card">
+        <div class="theme-grid" id="themeGrid"></div>
+      </div>
+    </section>
+
+    <!-- ---------- SECURITY ---------- -->
+    <section class="admin-panel" id="panel-security">
+      <div class="admin-topbar"><div><h1>Security</h1><p>Change your Admin Panel login. Do this the first time you log in.</p></div></div>
+      <div class="admin-section-card">
+        <div class="admin-grid-2">
+          <div class="field"><label>New Username</label><input type="text" id="secUser" /></div>
+          <div class="field"><label>New Password</label><input type="password" id="secPass" /></div>
+        </div>
+        <div class="field"><label>Confirm New Password</label><input type="password" id="secPassConfirm" /></div>
+        <div class="admin-save-row">
+          <button class="btn btn--primary" id="saveCredsBtn">Update Login</button>
+          <span class="admin-toast" id="credsToast">Saved &middot; use the new login next time</span>
+        </div>
+        <p class="login-error" id="credsError" style="margin-top:16px;">Passwords do not match.</p>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="js/site-data.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

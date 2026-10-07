@@ -1,0 +1,7 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder steel warehouse thumbnail">
+  <rect width="400" height="300" fill="#12151a"/>
+  <g stroke="#ff5a1f" stroke-width="1.3">
+    <path d="M40 240 360 240M40 240 100 130 200 90 300 130 360 240"/>
+    <path d="M100 130 100 240M200 90 200 240M300 130 300 240"/>
+  </g>
+</svg>

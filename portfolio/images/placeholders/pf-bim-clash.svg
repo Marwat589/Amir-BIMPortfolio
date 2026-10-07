@@ -1,0 +1,6 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder clash detection thumbnail">
+  <rect width="400" height="300" fill="#12151a"/>
+  <g stroke="#232a32" stroke-width="1"><path d="M0 50H400M0 100H400M0 150H400M0 200H400M0 250H400"/></g>
+  <rect x="120" y="90" width="90" height="90" fill="none" stroke="#2fa8ff" stroke-width="1.4"/>
+  <rect x="190" y="140" width="90" height="90" fill="none" stroke="#ff5a1f" stroke-width="1.4"/>
+</svg>

@@ -1,0 +1,6 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder BIM model thumbnail">
+  <rect width="400" height="300" fill="#12151a"/>
+  <g stroke="#232a32" stroke-width="1"><path d="M0 50H400M0 100H400M0 150H400M0 200H400M0 250H400"/></g>
+  <path d="M90 230 200 60 310 230Z" fill="none" stroke="#2fa8ff" stroke-width="1.4"/>
+  <path d="M90 230H310M150 230V130L200 100 250 130V230" fill="none" stroke="#2fa8ff" stroke-width="1"/>
+</svg>

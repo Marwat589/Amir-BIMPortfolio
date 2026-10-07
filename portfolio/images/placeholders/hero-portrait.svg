@@ -1,0 +1,18 @@
+<svg viewBox="0 0 420 525" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder profile portrait for Amir Ullah Khan">
+  <defs>
+    <linearGradient id="portraitBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#171c22"/>
+      <stop offset="100%" stop-color="#0e1115"/>
+    </linearGradient>
+    <pattern id="portraitGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M30 0H0V30" fill="none" stroke="#232a32" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="420" height="525" fill="url(#portraitBg)"/>
+  <rect width="420" height="525" fill="url(#portraitGrid)"/>
+  <circle cx="210" cy="210" r="86" fill="none" stroke="#2fa8ff" stroke-width="1.4" opacity="0.55"/>
+  <path d="M210 168a44 44 0 1 1 0 88 44 44 0 0 1 0-88Z" fill="none" stroke="#ff5a1f" stroke-width="2"/>
+  <path d="M112 430c14-58 62-96 98-96s84 38 98 96" fill="none" stroke="#ff5a1f" stroke-width="2"/>
+  <path d="M112 430c14-58 62-96 98-96s84 38 98 96" fill="none" stroke="#2fa8ff" stroke-width="1" opacity="0.4" transform="translate(0,10)"/>
+  <text x="210" y="486" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" letter-spacing="2" fill="#5e6874">PHOTO PENDING &#183; ADMIN UPLOAD</text>
+</svg>

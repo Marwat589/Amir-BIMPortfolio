@@ -1,0 +1,9 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder site QA/QC thumbnail">
+  <rect width="400" height="300" fill="#12151a"/>
+  <g stroke="#9aa6b2" stroke-width="1.2" opacity="0.85">
+    <rect x="60" y="70" width="280" height="160"/>
+    <path d="M60 150H340"/>
+  </g>
+  <circle cx="120" cy="110" r="16" fill="none" stroke="#2fa8ff" stroke-width="1.6"/>
+  <path d="M112 110l6 6 12-14" fill="none" stroke="#2fa8ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

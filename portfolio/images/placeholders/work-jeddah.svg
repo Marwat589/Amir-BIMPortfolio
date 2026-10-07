@@ -1,0 +1,10 @@
+<svg viewBox="0 0 320 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Floor plan drawing placeholder, sewage plant QA/QC">
+  <rect width="320" height="420" fill="#12151a"/>
+  <g stroke="#9aa6b2" stroke-width="1.3" opacity="0.85">
+    <rect x="40" y="50" width="240" height="320"/>
+    <path d="M40 170H280M160 170V50M40 260H160M220 170V260M220 260H280"/>
+  </g>
+  <g stroke="#2fa8ff" stroke-width="1.6"><path d="M60 380 260 380"/></g>
+  <circle cx="90" cy="90" r="5" fill="#ff5a1f"/>
+  <circle cx="240" cy="220" r="5" fill="#ff5a1f"/>
+</svg>
